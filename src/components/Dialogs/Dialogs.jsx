@@ -2,36 +2,37 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import {NavLink} from "react-router-dom"; 
 
+
+const DialogItem = (props) => {
+    let path ="/dialogs/" + props.id;
+
+    return <div className={s.dialog + ' ' + s.active}>
+    <NavLink to={path}>{props.name}</NavLink>    
+</div>
+}
+const Message = (props) => {
+    return <div className={s.dialog}>{props.message}</div>
+}
+
 const Dialogs = (props) => {
-    return (
-        <div className={s.dialogs}>
-            <div className={s.dialogsItems}>
-                <div className={s.dialog + ' ' + s.active}>
-                  <NavLink to="/dialogs/1">Hayko</NavLink>
-            </div>
-                <div className={s.dialog}>
-                <NavLink to="/dialogs/2">Nazar</NavLink>
-            </div>
-                <div className={s.dialog}>
-                <NavLink to="/dialogs/3">Aman</NavLink>
-            </div>
-                <div className={s.dialog}>
-                <NavLink to="/dialogs/4">Meret</NavLink>
-            </div>
-                <div className={s.dialog}>
-                <NavLink to="/dialogs/5">Valera</NavLink>
-            </div>
-                <div className={s.dialog}>
-                <NavLink to="/dialogs/6">Dimych</NavLink>
-            </div>
-            </div>
-                <div className={s.messages}>
-                    <div className={s.dialog}>Hello</div>
-                    <div className={s.dialog}>How are you?</div>
-                    <div className={s.dialog}>Whatsapp</div>
-                
-            </div>
+    return ( <div className={s.dialogs}>
+        <div className={s.dialogsItems}>
+            <DialogItem name="Hayko" id="1" />
+            <DialogItem name="Nazar" id="2" />
+            <DialogItem name="Myrat" id="3" />
+            <DialogItem name="Aman" id="4" />
+            <DialogItem name="Yura" id="5" />
+            <DialogItem name="Valera" id="6" />
+        </div>    
+      
+      <div className={s.messages}>
+           <Message message="Hello" />
+           <Message message="Hi" />
+           <Message message="Salam" />
+           <Message message="Privet" />
+           <Message message="Hola" />
         </div>
+         </div>
     )
 }
 

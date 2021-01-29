@@ -1,18 +1,20 @@
 import React from 'react';
-import s from './Profile.module.css'; 
+import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import Posts from './MyPosts/Posts/Posts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 
 const Profile = () => {
     return (
-    <div>
-        <img src='https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg'/>
-            <div>Ava+description</div>
-        <MyPosts />
-        
-        
-       </div>
+        <div>
+            <ProfileInfo />
+ 
+
+            <MyPosts />
+
+
+        </div>
 
     );
 }
